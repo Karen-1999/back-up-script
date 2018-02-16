@@ -1,8 +1,0 @@
-#!/bin/bash
-FILE_EXTENSION="$2"
-DIRNAME="$1.dir"
-ARCHIVENAME="$3"
-mkdir -p $DIRNAME
-find $HOME -path $(readlink -f "$DIRNAME") -prune -o -name "*.$FILE_EXTENSION" -exec cp {} $DIRNAME \;
-tar -cf $ARCHIVENAME.tar $DIRNAME
-echo "Done"
